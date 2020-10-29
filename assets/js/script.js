@@ -12,6 +12,7 @@ let nbAutoClickDisplay = document.getElementById("nb_cursor");
 
 let isAutoClickTriggered = false;
 let isSteelCoolDownTime = false;  //the bonus is not yet triggered!
+let isBonus30 = false;
 
 let timeLeftHandler; //for bonus of 30 seconds
 let seconds; //for bonus of 30 seconds
@@ -67,7 +68,12 @@ document.getElementById("runAutoClick").addEventListener("click",() =>{
   scoreTotal-= autoClick.price;
   Display(); // put Display() every time the scoreTotal is changed
 
-  autoClick.value = autoClick.value + 1;
+  if(isBonus30){
+    autoClick.value = autoClick.value + 2;
+  } else {
+    autoClick.value = autoClick.value + 1;
+  }
+  
   nbAutoClickDisplay.innerText = `NB Cursor: ${autoClick.value}`;
     
   autoClick.price = autoClick.price + Math.floor((autoClick.price * 35)/100);
@@ -86,7 +92,13 @@ document.getElementById("runMultiplier").addEventListener("click",() =>{
   scoreTotal-= multiplier.price;
   Display(); // put Display() every time the scoreTotal is changed
 
-  multiplier.value = multiplier.value +1;
+
+  if(isBonus30){
+    multiplier.value = multiplier.value + 2;
+  } else {
+    multiplier.value = multiplier.value + 1;
+  }
+
   document.getElementById("multiplierClickValue").innerText = `Value Click: ${multiplier.value}`;
 
   multiplier.price = multiplier.price + Math.floor((multiplier.price * 15)/100);
@@ -100,6 +112,8 @@ document.getElementById("runMultiplier").addEventListener("click",() =>{
 document.getElementById("runBonus").addEventListener("click",() =>{
   document.getElementById("runBonus").disabled = false;
   isSteelCoolDownTime = true;  
+
+  isBonus30 = true;
 
   // new price during bonus period
   multiplier.value = multiplier.value * 2;  
@@ -190,6 +204,14 @@ function refreshBonusTimeLeft(){
 
     multiplier.button.style.color = "white";
     autoClick.button.style.color = "white";
+
+    multiplier.value = multiplier.value / 2;
+    autoClick.value = autoClick.value / 2;
+
+    document.getElementById("multiplierClickValue").innerText = `Value Click: ${multiplier.value}`;
+    nbAutoClickDisplay.innerText = `NB Cursor: ${autoClick.value}`;
+    
+    isBonus30 = false;
    
   } else {
     document.getElementById("bonus_time_left").innerText = `Time left Bonus: ${seconds--} second(s)`
