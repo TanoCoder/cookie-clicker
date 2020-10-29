@@ -2,8 +2,8 @@
 
 ## Why this project ?
 
-This project was designed as an exercise during our training at [BeCode](https://becode.org/).
+This project was designed as an exercise during our training at BeCode.
 
 ## Github Page
 
-[Here]()
+[https://gaetano-di-salvo.github.io/cookie-clicker/](https://gaetano-di-salvo.github.io/cookie-clicker/)
