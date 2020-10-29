@@ -1,0 +1,74 @@
+body {
+  background-color: rgb(41, 12, 0);
+}
+#blockLeft {
+  background-color: rgb(247, 247, 247);
+  margin-top: 5%;
+  box-shadow: 3px 3px 15px -3px #000000;
+  border-radius: 5px;
+}
+#blockRight {
+  background-color: rgb(247, 247, 247);
+  margin-top: 5%;
+  box-shadow: 3px 3px 15px -3px #000000;
+  border-radius: 5px;
+}
+h1 {
+  text-align: center;
+  color: rgb(247, 247, 247);
+}
+h2 {
+  text-align: center;
+}
+
+
+/*IMAGE*/
+#cookie {
+  display: block;
+  margin: auto;
+}
+/*ROTATE IMAGE*/
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  -webkit-animation: rotating 10s linear infinite;
+}
+/*BUTTON*/
+#runClick {
+  display: block;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+#runMultiplier {
+  display: block;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: rgb(41, 12, 0);
+}
+#runAutoClick {
+  display: block;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: rgb(41, 12, 0);
+}
+#runBonus {
+  display: block;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: rgb(41, 12, 0);
+}
+
+.canAfford {
+  background-color: rgb(218, 165, 32);
+}
